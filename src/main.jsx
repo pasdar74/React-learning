@@ -7,12 +7,12 @@ import { Fragment, StrictMode } from 'react'
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  
     <Fragment>
       <App />
       
     </Fragment>
-  </StrictMode>
+  
 
 
 )

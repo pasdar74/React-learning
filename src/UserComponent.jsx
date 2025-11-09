@@ -1,14 +1,33 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const UserComponent=()=>{
+const UserComponent = () => {
+const [age, setage] = useState(20)
 
 
-    const[age,setage]=useState(20)
 
- const increaseage=()=>{
-    setage(age+1)
- }
-    return(
+useEffect(()=>{
+    console.log("Mounting")
+    return ()=> console.log("Unmounting")
+},[])
+
+
+
+useEffect(()=>{
+if(age === 25)
+    console.log("Your age is 25")
+},[age])
+
+
+
+
+
+
+    
+
+    const increaseage = () => {
+        setage(age + 1)
+    }
+    return (
         <div>
             <h1>
                 Welcome Morteza
