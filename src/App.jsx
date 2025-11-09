@@ -1,48 +1,25 @@
 import { Fragment, useState } from "react"
-
-import Users from "./Users"
-
-
-const userlist = [
-        { name: "Ali", age: "40", country: "Uae" },
-        { name: "omid", age: "26", country: "tailand" },
-        { name: "elnaz", age: "40", country: "tehran" },
-    ]
+import LoginComponent from "./LoginComponent"
+import UserComponent from "./UserComponent"
 
 
 const App = () => {
 
     
-
-    const [users,setUsers] = useState(userlist)
-
-    const handledelete=(name)=>{
-        const newusers= users.filter((user)=>user.name !== name)
-        setUsers(newusers)
-    }
-
-
-    const changesearch=(char)=>{
-        
-        const newusers= userlist.filter((user)=>user.name.toLowerCase().includes(char.toLowerCase()) )
-        setUsers(newusers)
-    }
-
-
-
+    const [islogined,setislogined]=useState(false)
+    
     return (
-        <Fragment>
 
-            <input onChange={(e)=>changesearch(e.target.value)} type="text" />
+        <div>
+                <h1>Hello</h1>
+                <button onClick={()=>setislogined(!islogined)}>
+                    {islogined ? "Logout":"Login"}
+                </button>
+                {islogined ? <UserComponent/>:<LoginComponent/>}
+                
+        </div>
 
-            {
-                users.map((user) => (
-                    <Users key={user.name} name={user.name} age={user.age} country={user.country} handledelete={()=>handledelete(user.name)}/>
-                ))
-            }
-            
-        </Fragment>
-
+        
     )
 
 }
