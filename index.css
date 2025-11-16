@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: Iransans;
+    src: url(/src/assets/fonts/Iransans.woff);
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: Iransans;
+    color: #737373
+}
+
+header {
+    height: 64px;
+    background-color: white;
+}
+
+.menu-item {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    -moz-column-gap: 0.5rem;
+    column-gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function:
+        cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+    color: black;
+}
