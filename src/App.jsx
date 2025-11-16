@@ -1,47 +1,29 @@
 import { Fragment, useState } from "react"
 
-import Users from "./Users"
-
-
-const userlist = [
-        { name: "Ali", age: "40", country: "Uae" },
-        { name: "omid", age: "26", country: "tailand" },
-        { name: "elnaz", age: "40", country: "tehran" },
-    ]
 
 
 const App = () => {
 
-    
-
-    const [users,setUsers] = useState(userlist)
-
-    const handledelete=(name)=>{
-        const newusers= users.filter((user)=>user.name !== name)
-        setUsers(newusers)
-    }
-
-
-    const changesearch=(char)=>{
-        
-        const newusers= userlist.filter((user)=>user.name.toLowerCase().includes(char.toLowerCase()) )
-        setUsers(newusers)
-    }
 
 
 
     return (
-        <Fragment>
+        <div className="w-full flex flex-auto flex-col">
+            <div className="flex flex-auto min-w-0">
+                <div className="w-screen h-screen min-h-screen ">
+                    <div className="min-h-screen border-r-2 border-r-gray-200 bg-white sticky" style={{"width":"290px" , "minWidth":"290px"}}>
 
-            <input onChange={(e)=>changesearch(e.target.value)} type="text" />
+                    </div>
+                    <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
+                        Hello
+                    </div>
 
-            {
-                users.map((user) => (
-                    <Users key={user.name} name={user.name} age={user.age} country={user.country} handledelete={()=>handledelete(user.name)}/>
-                ))
-            }
-            
-        </Fragment>
+                </div>
+            </div>
+
+        </div>
+
+
 
     )
 
